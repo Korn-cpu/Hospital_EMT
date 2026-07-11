@@ -184,7 +184,7 @@
     </div>
     <div class="kpi">
       <p class="label">ค่าที่ปรึกษา MDL คงเหลือสุทธิ</p>
-      <p class="value">8,647,400</p>
+      <p class="value">8,547,400</p>
       <p class="foot">หลังหักส่วนเกินงบแล้ว (จ่ายตอนปิดโครงการ)</p>
     </div>
   </div>
@@ -224,7 +224,8 @@
         <tr><td>ค่าที่ปรึกษา MDL เดิม</td><td class="num">10,000,000</td></tr>
         <tr><td>หัก ส่วนเกินงบก่อสร้าง TJ (สุทธิ)</td><td class="num neg">(802,600)</td></tr>
         <tr><td>หัก ค่าตั้งหม้อแปลงและเสาไฟฟ้า (การไฟฟ้า)</td><td class="num neg">(550,000)</td></tr>
-        <tr class="total-row"><td>คงเหลือจ่าย MDL สุทธิ (ตอนปิดโครงการ)</td><td class="num">8,647,400</td></tr>
+        <tr><td>หัก ค่าหัวตรวจวัดเครื่องอัลตราซาวน์ (ชุดละ 3 หัว)</td><td class="num neg">(100,000)</td></tr>
+        <tr class="total-row"><td>คงเหลือจ่าย MDL สุทธิ (ตอนปิดโครงการ)</td><td class="num">8,547,400</td></tr>
       </table>
       </div>
     </div>
@@ -274,15 +275,21 @@
         </tr>
         <tr>
           <td>ค่าที่ปรึกษา MDL สุทธิ</td>
-          <td class="num" style="font-weight:600">8,647,400</td>
+          <td class="num" style="font-weight:600">8,547,400</td>
           <td class="num" style="color:var(--teal)">0</td>
-          <td class="num" style="color:var(--amber)">8,647,400</td>
+          <td class="num" style="color:var(--amber)">8,547,400</td>
         </tr>
         <tr>
           <td>ค่าหม้อแปลง+เสาไฟฟ้า</td>
           <td class="num" style="font-weight:600">550,000</td>
           <td class="num" style="color:var(--teal)">0</td>
           <td class="num" style="color:var(--amber)">550,000</td>
+        </tr>
+        <tr>
+          <td>หัวตรวจวัดเครื่องอัลตราซาวน์ (3 หัว)</td>
+          <td class="num" style="font-weight:600">100,000</td>
+          <td class="num" style="color:var(--teal)">0</td>
+          <td class="num" style="color:var(--amber)">100,000</td>
         </tr>
         <tr class="total-row">
           <td>รวมทั้งโครงการ</td>
@@ -311,6 +318,11 @@
           <td style="text-align:right;"><span class="badge badge-urgent">ด่วน — ยังไม่จ่าย</span></td>
         </tr>
         <tr>
+          <td>หัวตรวจวัดเครื่องอัลตราซาวน์ (ชุดละ 3 หัว)</td>
+          <td class="num">100,000</td>
+          <td style="text-align:right;"><span class="badge badge-sched">ยังไม่จ่าย</span></td>
+        </tr>
+        <tr>
           <td>MDL ซื้อของ — คงเหลือ</td>
           <td class="num">17,600,460</td>
           <td style="text-align:right;"><span class="badge badge-sched">ตามงวด</span></td>
@@ -332,7 +344,7 @@
         </tr>
         <tr>
           <td>ค่าที่ปรึกษา MDL สุทธิ</td>
-          <td class="num">8,647,400</td>
+          <td class="num">8,547,400</td>
           <td style="text-align:right;"><span class="badge badge-close">ปิดโครงการ</span></td>
         </tr>
       </table>
@@ -354,10 +366,10 @@
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Promedic ซื้อของ','MDL ซื้อของ','TJ ก่อสร้าง','ค่าบริหารหน่วยงาน','ค่าที่ปรึกษา MDL สุทธิ','ค่าหม้อแปลง+เสาไฟฟ้า'],
+      labels: ['Promedic ซื้อของ','MDL ซื้อของ','TJ ก่อสร้าง','ค่าบริหารหน่วยงาน','ค่าที่ปรึกษา MDL สุทธิ','ค่าหม้อแปลง+เสาไฟฟ้า','หัวตรวจวัดอัลตราซาวน์'],
       datasets: [
-        { label: 'จ่ายแล้ว', data: [19721114,13835385,3654000,6300000,0,0], backgroundColor:'#0e7a6b', borderRadius:4, maxBarThickness:26 },
-        { label: 'คงเหลือ', data: [27843041,17600460,4231778,12616822,8647400,550000], backgroundColor:'#c9820c', borderRadius:4, maxBarThickness:26 }
+        { label: 'จ่ายแล้ว', data: [19721114,13835385,3654000,6300000,0,0,0], backgroundColor:'#0e7a6b', borderRadius:4, maxBarThickness:26 },
+        { label: 'คงเหลือ', data: [27843041,17600460,4231778,12616822,8547400,550000,100000], backgroundColor:'#c9820c', borderRadius:4, maxBarThickness:26 }
       ]
     },
     options: {
